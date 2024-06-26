@@ -1,6 +1,6 @@
 // models/DiagnosticLab.js
 const mongoose = require("mongoose");
-// const DiagnosticTest = require("./diagnosticTest"); // Import DiagnosticTest model
+const DiagnosticTest = require("./diagnosticTest.js");
 
 const DiagnosticLabSchema = new mongoose.Schema({
   userId: {
@@ -22,7 +22,7 @@ const DiagnosticLabSchema = new mongoose.Schema({
   testsOffered: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "DiagnosticTest",
+      ref: DiagnosticTest,
     },
   ],
 });
