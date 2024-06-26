@@ -1,6 +1,21 @@
 // models/DiagnosticLab.js
 const mongoose = require("mongoose");
-const DiagnosticTest = require("./diagnosticTest.js");
+// const DiagnosticTest = require("./diagnosticTest.js");
+
+const DiagnosticTestSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+});
 
 const DiagnosticLabSchema = new mongoose.Schema({
   userId: {
@@ -19,12 +34,7 @@ const DiagnosticLabSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  testsOffered: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: DiagnosticTest,
-    },
-  ],
+  testsOffered: [DiagnosticTestSchema],
 });
 
 const DiagnosticLab = mongoose.model("DiagnosticLab", DiagnosticLabSchema);
