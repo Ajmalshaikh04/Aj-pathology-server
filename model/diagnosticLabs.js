@@ -1,6 +1,6 @@
 // models/DiagnosticLab.js
 const mongoose = require("mongoose");
-const DiagnosticTest = require("./DiagnosticTest"); // Import DiagnosticTest model
+// const DiagnosticTest = require("./diagnosticTest"); // Import DiagnosticTest model
 
 const DiagnosticLabSchema = new mongoose.Schema({
   userId: {
